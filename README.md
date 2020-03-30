@@ -8,3 +8,6 @@ Your guide to books that suits your taste
 
 # Tools to Integrate
 Yet to be decided
+
+# Dataset
+The dataset used in this application is [GoodBooks10k](https://github.com/zygmuntz/goodbooks-10k)
