@@ -6,7 +6,9 @@ var user = require('../models/users');
 // localhost:3000/users/
 router.get('/', (req,res)=>{
     user.find({}, (err, docs)=>{
-        if(!err) { res.send(docs);}
+        if(!err) {
+            console.log(docs);
+            res.send(docs);}
         else{ console.log('error in retreiving data: ') +JSON.stringify(err);}
     });
 });
@@ -22,8 +24,9 @@ router.get('/:id', (req,res) =>{
 router.post('/', (req,res)=>{
     var u = new user({
         userid: req.body.userid,
-        name: req.body.name,
-        points: req.body.points
+        email: req.body.email,
+        points: req.body.points,
+        password: req.body.password
     });
     console.log(u);
     u.save((err,doc) =>{
@@ -38,8 +41,9 @@ router.put('/:id', (req,res) =>{
     
     var u = {
         userid: req.body.userid,
-        name: req.body.name,
-        points: req.body.points
+        email: req.body.email,
+        points: req.body.points,
+        password: req.body.password
     };
     user.findByIdAndUpdate(req.params.id, {$set:u},{new:true}, (err,doc)=>{
         if(!err){ res.send(doc);}
