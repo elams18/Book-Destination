@@ -1,1 +1,14 @@
-<app-user></app-user>
+<mat-toolbar color="primary">
+    <a href ng-click=""  class="icon">
+        <mat-icon>home</mat-icon>
+    </a>
+    <label style="font-size: inherit; color: skyblue;">Book Destination</label>
+    <span class="example-fill-remaining-space"></span>
+    <div *ngIf= "ifSignedIn()">
+        <a href ng-click=""  class="icon" style=" color: skyblue;">
+            <mat-icon>account_circle</mat-icon>
+                <mat-icon>exit_to_app</mat-icon>
+        </a>
+    </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

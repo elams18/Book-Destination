@@ -1,0 +1,42 @@
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+    <h3>Your destination to right books</h3>
+    <h3 style="font-weight: bold;">Login</h3>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+					<input type="text" name="userid" placeholder="Username" required="" #name="ngModel" [(ngModel)]="userService.selectedUser.userid">
+                    
+                    <input type="password" name="password" #name="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="Enter password" required>
+          
+          <button type="submit" style="background-color: #3d3b62;"   routerLink='/home' routerLinkActive="active" [disabled]="!userForm.valid">Login</button>
+				</form>
+        <p>Don't have an Account? <a routerLink="/signup" routerLinkActive="active"> Sign Up Now!</a></p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+  </div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="leftpane">
+    </div>
+    <div class="middlepane">
+        <h1>You might like these books</h1>
+        <mat-grid-list cols="4" rowHeight="170px" gutterSize="5px">
+            <mat-grid-tile [colspan]=1 [rowspan]=1  *ngFor="let book of books | slice:1:17;let i = index">
+                <div (click)="showBook(book,i)">
+                <img src={{book.image_url}}>
+                <mat-grid-tile-header>
+                    <h3>{{book.title}}</h3>
+                </mat-grid-tile-header>
+            </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    <div class="rightpane"></div>
+</div>
